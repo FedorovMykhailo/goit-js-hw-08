@@ -1,7 +1,7 @@
 import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
 
-refs = { player: document.querySelector("#vimeo-player"), }
+refs = { player: document.querySelector("#vimeo-player") };
 
 const getTime = () => {
     let time = 0;
