@@ -1,7 +1,6 @@
 import throttle from 'lodash.throttle';
 
 const refs = { form: document.querySelector(".feedback-form"), };
-console.log(refs.form.elements);
 
 const feedback = {
     email: "",
