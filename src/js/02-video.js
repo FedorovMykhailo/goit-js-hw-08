@@ -6,12 +6,13 @@ const refs = { player: document.querySelector("#vimeo-player") };
 const getTime = () => {
     let time = 0;
     try {
-        time = localStorage.getItem('videoplayer-current-time')
+        time = localStorage.getItem('videoplayer-current-time');
+        if (!time) { return 0 }
     }
     catch (error) {
         console.log(error.message);
     }
-    return time
+    return time 
 };
 
 const setTime = (time) => {
@@ -22,10 +23,11 @@ const setTime = (time) => {
     }
 }
 
-const player = new Player(refs.player);
+ const player = new Player(refs.player);
 
-player.setCurrentTime(getTime())
+
+player.setCurrentTime(getTime());
 
 const onPlay = (data) => { setTime(data.seconds) }
 
-player.on('timeupdate', throttle(onPlay, 250));
+player.on('timeupdate', throttle(onPlay, 1000));

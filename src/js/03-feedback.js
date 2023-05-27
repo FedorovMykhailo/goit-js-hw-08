@@ -11,8 +11,9 @@ const onLoad = () => {
     try {
         const jsonFeedback = JSON.parse(localStorage.getItem('feedback-form-state'))
         if (jsonFeedback) {
-            refs.form.elements.email.value = jsonFeedback.email;
-            refs.form.elements.message.value = jsonFeedback.message;
+            refs.form.elements.email.value = feedback.email = jsonFeedback.email;
+            refs.form.elements.message.value = feedback.message = jsonFeedback.message;
+            console.log(feedback);
         }
     } catch (error) {
         console.log(error.message);
@@ -40,6 +41,7 @@ const onSubmit = (event) => {
     console.log(feedback);
     localStorage.removeItem('feedback-form-state');
     refs.form.reset();
+    feedback.email = feedback.message = "";
 }
  
 onLoad();
