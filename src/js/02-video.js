@@ -25,7 +25,6 @@ const setTime = (time) => {
 
  const player = new Player(refs.player);
 
-
 player.setCurrentTime(getTime());
 
 const onPlay = (data) => { setTime(data.seconds) }
