@@ -36,6 +36,8 @@ const onLoad = () => {
 
 const onSubmit = (event) => {
     event.preventDefault();
+    // const jsonFeedback = JSON.parse(localStorage.getItem('feedback-form-state'))
+    console.log(feedback);
     localStorage.removeItem('feedback-form-state');
     refs.form.reset();
     feedback.email = feedback.message = "";
